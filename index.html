@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="normalize.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
+    <title>CodeLab</title>
 </head>
 <body>
 <header> 
@@ -30,65 +30,49 @@
     </section>
 
     <section class="sec">
-        <h2>Parallax Scrolling Website</h2>
-        <p>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae deserunt sit natus porro repellendus quibusdam totam voluptatem illum. Reprehenderit totam vero ipsam, placeat saepe sint modi exercitationem voluptatibus repellendus.<br><br>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae deserunt sit natus porro repellendus quibusdam totam voluptatem illum. Reprehenderit totam vero ipsam, placeat saepe sint modi exercitationem voluptatibus repellendus.<br><br>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae deserunt sit natus porro repellendus quibusdam totam voluptatem illum. Reprehenderit totam vero ipsam, placeat saepe sint modi exercitationem voluptatibus repellendus.<br><br>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae deserunt sit natus porro repellendus quibusdam totam voluptatem illum. Reprehenderit totam vero ipsam, placeat saepe sint modi exercitationem voluptatibus repellendus.<br><br>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae deserunt sit natus porro repellendus quibusdam totam voluptatem illum. Reprehenderit totam vero ipsam, placeat saepe sint modi exercitationem voluptatibus repellendus.<br><br>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae deserunt sit natus porro repellendus quibusdam totam voluptatem illum. Reprehenderit totam vero ipsam, placeat saepe sint modi exercitationem voluptatibus repellendus.<br><br>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae deserunt sit natus porro repellendus quibusdam totam voluptatem illum. Reprehenderit totam vero ipsam, placeat saepe sint modi exercitationem voluptatibus repellendus.<br><br>
-        </p>
-
-    </section>
-
+        <h2>TRABAJA CON NOSOTROS</h2>
+            <form id="form">
+                <fieldset>
+                    <legend>Información personal</legend>
+                    <label>Nombre Completo</label>
+                    <input type="text" id="nombre">
+                    <p class="warning" id="warningNombre"></p>
+                    <label>Profesión</label>
+                    <input type="text" id="profesion">
+                    <p class="warning" id="warningProfesion"></p>
+                    <label>Telefóno</label>
+                    <input type="tel" id="telefono">
+                    <p class="warning" id="warningTelefono"></p>
+                    <label>Correo electrónico</label>
+                    <input type="email" id="email">
+                    <p class="warning" id="warningEmail"></p>
+                </fieldset>
+                
+                <fieldset>
+                        <legend>RRSS</legend>
+                        <label>LinkedIn</label>
+                        <input type="text" id="rrss">
+                        <p class="warning" id="warningRRSS"></p>
+                </fieldset>
     
-   
-    <section>
-        <form>
-            <fieldset>
-                <legend>Información personal</legend>
-                <label>Nombre Completo</label>
-                <input type="text" id="nombre">
-                <p class="warning" id="warningNombre"></p>
-                <label>Profesión</label>
-                <input type="text" id="profesion">
-                <p class="warning" id="warningProfesion"></p>
-                <label>Telefóno</label>
-                <input type="tel" id="telefono">
-                <p class="warning" id="warningTelefono"></p>
-                <label>Correo electrónico</label>
-                <input type="email" id="email">
-                <p class="warning" id="warningEmail"></p>
-            </fieldset>
-            
-            <fieldset>
-                    <legend>RRSS</legend>
-                    <label>LinkedIn</label>
-                    <input type="text" id="rrss">
-                    <p class="warning" id="warningRRSS"></p>
-            </fieldset>
-
-            <fieldset id="habilidadContenedor">
-                    <legend>Habilidades</legend>
-                    <p>Solo puede elegir un maximo de 3 Habilidades:</p>
-                    <label>HTML<input type="checkbox" name="HTML" class="checkboxLimited"></label>
-                    <label>CSS<input type="checkbox" name="CSS" class="checkboxLimited"></label>
-                    <label>git<input type="checkbox" name="git" class="checkboxLimited"></label>
-                    <label>JavaScript<input type="checkbox" name="JavaScript" class="checkboxLimited"></label>
-                    <label>AJAX<input type="checkbox" name="AJAX" class="checkboxLimited"></label>
-                    <label>React<input type="checkbox" name="React" class="checkboxLimited"></label>
-            </fieldset>
-                <p class="warning" id="warningHabilidades"></p>
-                <input type="button" value="Añadir Habilidad" id="btnAddHabilidad">
-                <input type="button" value="Eliminar Habilidad" id="btnDeleteHabilidad">
-
-            <button type="submit">Enviar</button>
-
-        </form>
+                <fieldset id="habilidadContenedor">
+                        <legend>Habilidades</legend>
+                        <p>Solo puede elegir un maximo de 3 Habilidades:</p>
+                        <label>HTML<input type="checkbox" name="HTML" class="checkboxLimited"></label>
+                        <label>CSS<input type="checkbox" name="CSS" class="checkboxLimited"></label>
+                        <label>git<input type="checkbox" name="git" class="checkboxLimited"></label>
+                        <label>JavaScript<input type="checkbox" name="JavaScript" class="checkboxLimited"></label>
+                        <label>AJAX<input type="checkbox" name="AJAX" class="checkboxLimited"></label>
+                        <label>React<input type="checkbox" name="React" class="checkboxLimited"></label>
+                </fieldset>
+                    <p class="warning" id="warningHabilidades"></p>
+                    <input type="button" value="Añadir Habilidad" id="btnAddHabilidad">
+                    <input type="button" value="Eliminar Habilidad" id="btnDeleteHabilidad">
+    
+                <button type="submit">Enviar</button>
+    
+            </form>
     </section>
-
     <script src="function.js"></script>
 </body>
 </html>

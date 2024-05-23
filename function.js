@@ -14,6 +14,8 @@ window.addEventListener('scroll', () => {
    hill4.style.left = value * -1.5 + 'px';
    hill1.style.top = value * 1 + 'px';
 });
+
+
 const nombre = document.getElementById("nombre");
 const profesion = document.getElementById("profesion");
 const telefono = document.getElementById("telefono");
@@ -32,7 +34,7 @@ let boolProfesion = false;
 let boolTelefono = false;
 let boolEmail = false;
 let boolRRSS = false;
-let boolHabilidades = false;
+let boolHabilidades = true;
 
 const form = document.getElementById("form");
 
@@ -89,7 +91,7 @@ form.addEventListener("submit", e=>{
     }
 
     if(boolNombre == true && boolProfesion == true && boolTelefono == true && boolEmail == true && boolRRSS == true && boolHabilidades == true) {
-        alert('Botón presionado!'); 
+        alert('Validado!'); 
     }
 });
 

@@ -11,6 +11,13 @@ const warningEmail = document.getElementById("warningEmail");
 const warningRRSS = document.getElementById("warningRRSS");
 const warningHabilidades = document.getElementById("warningHabilidades");
 
+let boolNombre = false;
+let boolProfesion = false;
+let boolTelefono = false;
+let boolEmail = false;
+let boolRRSS = false;
+let boolHabilidades = false;
+
 const form = document.getElementById("form");
 
 //Validar formulario
@@ -20,38 +27,53 @@ form.addEventListener("submit", e=>{
     //Validar Nombre
     if(nombre.value.length < 6){
         warningNombre.innerHTML = "el Nombre es muy corto";
+        boolNombre = false;
     } else {
         warningNombre.innerHTML = "";
+        boolNombre = true;
     }
 
     //Validar Profesión
     if(profesion.value.length < 6){
         warningProfesion.innerHTML = "La profesión es muy corto";
+        boolProfesion = false;
     } else {
         warningProfesion.innerHTML = "";
+        boolProfesion = true;
     }
 
     //Validar Telefono
     if(telefono.value.length < 10){
         warningTelefono.innerHTML = "el telefono es muy corto";
+        boolTelefono = false;
     } else if(telefono.value.length > 10) {
         warningTelefono.innerHTML = "el telefono es muy largo";
+        boolTelefono = false;
     } else {
         warningTelefono.innerHTML = "";
+        boolTelefono = true;
     }
 
     //Validar Email
     if(!regexEmail.test(email.value)){
         warningEmail.innerHTML = "El email no es valido";
+        boolEmail = false;
     } else {
         warningEmail.innerHTML = "";
+        boolEmail = true;
     }
 
     //Validar RSS
     if(rrss.value.length < 6){
         warningRRSS.innerHTML = "El rss es muy corto";
+        boolRRSS = false;
     } else {
         warningRRSS.innerHTML = "";
+        boolRRSS = true;
+    }
+
+    if(boolNombre == true && boolProfesion == true && boolTelefono == true && boolEmail == true && boolRRSS == true && boolHabilidades == true) {
+        alert('Botón presionado!'); 
     }
 });
 
@@ -123,6 +145,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 warningHabilidades.innerHTML = "Como Maximo 3 Habilidades";
             } else {
                 warningHabilidades.innerHTML = "";
+            }
+
+            if (checkedCheckboxes.length <= 3) {
+                boolHabilidades = true;
+            } else {
+                boolHabilidades = false;
             }
         });
     });

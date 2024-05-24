@@ -46,6 +46,7 @@ let boolHabilidades = true;
 
 const btnAddHabilidad = document.getElementById("btnAddHabilidad");
 const habilidadContenedor = document.getElementById("habilidadContenedor");
+const warningContainer = document.getElementById("warning-container");
 const btnDeleteHabilidad = document.getElementById("btnDeleteHabilidad");
 const contenedorTarjeta = document.getElementById("contenedorTarjeta");
 
@@ -147,9 +148,10 @@ const addHabilidadTextBt = () => {
     habilidadText.type = 'text';
     habilidadText.placeholder = 'Habilidad';
 
-    habilidadContenedor.appendChild(habilidadText);
+    warningContainer.insertBefore(habilidadText, warningContainer.lastChild);
 
     const habilidadBtn = document.createElement('button');
+    habilidadBtn.className = 'btnSubmit';
     habilidadBtn.textContent = 'Agregar';
 
     const handleButtonClick = (event) => {
@@ -164,18 +166,19 @@ const addHabilidadTextBt = () => {
 
 
         habilidadLabel.textContent = habilidadText.value;
+        habilidadLabel.className = 'check';
         habilidadLabel.appendChild(habilidad);
 
         habilidadContenedor.appendChild(habilidadLabel);
 
 
-        habilidadContenedor.removeChild(habilidadText);
-        habilidadContenedor.removeChild(event.target);
+        warningContainer.removeChild(habilidadText);
+        warningContainer.removeChild(event.target);
     }
 
     habilidadBtn.addEventListener('click', handleButtonClick);
+    warningContainer.insertBefore(habilidadBtn, warningContainer.lastChild);
 
-    habilidadContenedor.appendChild(habilidadBtn);
 }
 
 btnAddHabilidad.addEventListener('click', addHabilidadTextBt);

@@ -147,6 +147,7 @@ const addHabilidadTextBt = () => {
     habilidadContenedor.appendChild(habilidadText);
 
     const habilidadBtn = document.createElement('button');
+    habilidadBtn.className = 'btnSubmit';
     habilidadBtn.textContent = 'Agregar';
 
     const handleButtonClick = (event) => {

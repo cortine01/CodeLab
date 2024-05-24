@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="normalize.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="import" href="https://fontawesome.com/icons/envelope?f=classic&s=fa-regular">
+    <script src="https://kit.fontawesome.com/badd522a95.js" crossorigin="anonymous"></script>
     <title>CodeLab</title>
 </head>
 <body>
@@ -35,46 +37,50 @@
 
     <section class="sec">
         <h2>TRABAJA CON NOSOTROS</h2>
+        <div class="testbox">
+
             <form id="form">
-                <fieldset>
-                    <legend>Información personal</legend>
-                    <label>Nombre Completo</label>
-                    <input type="text" id="nombre">
+                <div class="textContainer">
+                    <label id="icon" for="nombre"><i class="fa-regular fa-user" ></i></i></label>
+                    <input type="text" id="nombre" placeholder="Nombre Completo">
                     <p class="warning" id="warningNombre"></p>
-                    <label>Profesión</label>
-                    <input type="text" id="profesion">
+
+                    <label id="icon" for="profesion" ><i class="fa-solid fa-briefcase"></i></label>
+                    <input type="text" id="profesion" placeholder="Profesión">
                     <p class="warning" id="warningProfesion"></p>
-                    <label>Telefóno</label>
-                    <input type="tel" id="telefono">
+
+                    <label id="icon" for="telefono" ><i class="fa-solid fa-phone"></i></label>
+                    <input type="tel" id="telefono" placeholder="Teléfono">
                     <p class="warning" id="warningTelefono"></p>
-                    <label>Correo electrónico</label>
-                    <input type="email" id="email">
+
+                     <label id="icon" for="email" ><i class="fa-regular fa-envelope"></i></label>
+                    <input type="email" id="email" placeholder="Email">
                     <p class="warning" id="warningEmail"></p>
-                </fieldset>
+
+                    <label id="icon" for="rss"><i class="fa-brands fa-linkedin"></i></label>
+                    <input type="text" id="rrss" placeholder="linkedin">
+                    <p class="warning" id="warningRRSS"></p>
+                </div>
                 
-                <fieldset>
-                        <legend>RRSS</legend>
-                        <label>LinkedIn</label>
-                        <input type="text" id="rrss">
-                        <p class="warning" id="warningRRSS"></p>
-                </fieldset>
+                <div class="accounttype">
+                    <div id="habilidadContenedor">
+                            <legend>Habilidades</legend>
+                            <p class="habilidadesDescripcion">Solo puede elegir un maximo de 3 Habilidades:</p>
+                            <label class="check" for="checkboxLimited">HTML<input type="checkbox" name="HTML" class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">CSS<input type="checkbox" name="CSS" class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">git<input type="checkbox" name="git" class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">JavaScript<input type="checkbox" name="JavaScript" class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">AJAX<input type="checkbox" name="AJAX" class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">React<input type="checkbox" name="React" class="checkboxLimited"></label>
+                    </div>
+                        <p class="warning" id="warningHabilidades"></p>
+                        <input type="button" value="+" id="btnAddHabilidad" class="btnHabilidad">
+                        <input type="button" value="-" id="btnDeleteHabilidad" class="btnHabilidad">
+                </div>
     
-                <fieldset id="habilidadContenedor">
-                        <legend>Habilidades</legend>
-                        <p>Solo puede elegir un maximo de 3 Habilidades:</p>
-                        <label>HTML<input type="checkbox" name="HTML" class="checkboxLimited"></label>
-                        <label>CSS<input type="checkbox" name="CSS" class="checkboxLimited"></label>
-                        <label>git<input type="checkbox" name="git" class="checkboxLimited"></label>
-                        <label>JavaScript<input type="checkbox" name="JavaScript" class="checkboxLimited"></label>
-                        <label>AJAX<input type="checkbox" name="AJAX" class="checkboxLimited"></label>
-                        <label>React<input type="checkbox" name="React" class="checkboxLimited"></label>
-                </fieldset>
-                    <p class="warning" id="warningHabilidades"></p>
-                    <input type="button" value="Añadir Habilidad" id="btnAddHabilidad">
-                    <input type="button" value="Eliminar Habilidad" id="btnDeleteHabilidad">
-    
-                <button type="submit">Enviar</button>
+                <button type="submit" class="btnSubmit">Enviar</button>
             </form>
+        </div>
             <div id="contenedorTarjeta">
                 
             </div>

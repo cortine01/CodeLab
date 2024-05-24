@@ -11,18 +11,6 @@ window.addEventListener('scroll', () => {
         return;
     }
 
-    text.style.marginTop = value * 2.5 + 'px';
-    leaf.style.top = value * -1.5 + 'px';
-    leaf.style.left = value * 1.5 + 'px';
-    hill5.style.left = value * 1.5 + 'px';
-    hill4.style.left = value * -1.5 + 'px';
-    hill1.style.top = value * 1 + 'px';
-
-   let value = window.scrollY;
-   //if (value == 0){
-    //value = 1;
-    //man.style.left += 800 + 'px' ;
-  // };
    text.style.marginTop = value * 2.5 + 'px';
    //man.style.left = value * 0.1 + 'px';
    man.style.top = value * -0.1 + 'px';

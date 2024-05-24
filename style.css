@@ -58,7 +58,7 @@ header {
 #text { 
     position: absolute;
     font-size: 5em;
-    color: #1e192f;
+    color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
 }
 
@@ -70,51 +70,9 @@ header {
     pointer-events: none;
 }
 
-.parallax .world {
-    position: absolute;
-    top: 20px;
-    left: 347px;
-    width: 48%;
-    pointer-events: none;
-}
-
-.parallax .city  {
-    position: absolute;
-    top: 0;
-    left: -70px;
-    width: 90%;
-    pointer-events: none;
-}
-
-.parallax .city2  {
-    position: absolute;
-    top: 0;
-    left: 500px;
-    width: 90%;
-    pointer-events: none;
-}
-
-.parallax .man {
-    position: absolute;
-    top: -20px;
-    left: 800px;
-    width: 25%;
-    pointer-events: none;
-    
-}
-
-.parallax .woman {
-    position: absolute;
-    top: -20px;
-    left: 230px;
-    width: 25%;
-    pointer-events: none;
-    
-}
-
 .sec {
     position: relative;
-    background: #006174;
+    background: #bfe5ef;
     padding: 100px;
     margin-top: 100px;
 }

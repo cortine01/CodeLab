@@ -1,9 +1,10 @@
 let text = document.getElementById('text');
 let man = document.getElementById('man');
 let woman = document.getElementById('woman');
-let city = document.getElementById('city');
-let city2 = document.getElementById('city2');
+//let city = document.getElementById('city');
+//let city2 = document.getElementById('city2');
 let world = document.getElementById('world');
+let fondo = document.getElementById('fondo');
 
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
@@ -12,12 +13,14 @@ window.addEventListener('scroll', () => {
     }
 
    text.style.marginTop = value * 2.5 + 'px';
-   //man.style.left = value * 0.1 + 'px';
-   man.style.top = value * -0.1 + 'px';
-   city2.style.top = value * 1 + 'px';
-   city.style.top = value * 1 + 'px';
-   woman.style.top = value * -0.1 + 'px';
-   world.style.top = value * 1.5 + 'px';
+   man.style.left = value * -1  + 'px';
+   man.style.top = value * -1 + 'px';
+   //city2.style.left = value * -0.001 + 'px';
+   //city.style.left = value * 0.001 + 'px';
+   woman.style.top = value * -1 + 'px';
+   woman.style.left = value * 1 + 'px';
+   world.style.top = value * 1 + 'px';
+   fondo.style.top = value * 1 + 'px';
 });
 
 

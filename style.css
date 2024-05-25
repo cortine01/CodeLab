@@ -287,3 +287,76 @@ p.warning {
 .btnSubmit:hover {
   background-color: #2d6073; /* Color de fondo al pasar el ratón por encima */
 }
+
+
+#contenedorTarjeta {
+  margin-top: 100px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;            
+  width: 450px;
+  margin: 0 auto;
+  background:linear-gradient(rgb(245 215 189) 30%, rgb(255, 255, 255) 30%);
+  box-shadow: 0 0 25px darkred ;
+  border-radius: 10px;
+  padding: 50px 16px;
+}
+.card_image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+}
+.card_image .picture{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgb(250, 238, 227);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.card > .card_image > .picture{    
+  transition: all 0.7s;
+}
+
+.card:hover > .card_image > .picture{
+  border-radius: 5%;
+  box-shadow: 0 0px 40px brown;
+  transform: translateY(-50%) scale(1.5);
+}
+
+.card_body{ text-align: center; padding: 20px; }
+.card_body h2{ color: peru; margin-bottom: 5px;}
+.card_body p{color: gray; margin-top: 5px;}
+.card_redes{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.card_redes div{
+  padding: 15px;
+  text-align: center;
+  background:papayawhip;
+  border-radius: 6px;
+  width: 100%;
+  margin: 10px;
+}
+.card_redes div p{
+  text-decoration: underline;
+  color: peru;
+
+}
+
+/* ANIMACIONES CSS */
+@keyframes _in {
+  0%{ border-radius: 50%}            
+  100%{ border-radius: 0%; transform: scale(1.2);}
+}
+
+@keyframes _out {
+  0%{ border-radius: 0%;transform: scale(1.2);}
+  100%{ border-radius: 50%; transform: scale(1);}                        
+}

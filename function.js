@@ -37,6 +37,7 @@ const warningEmail = document.getElementById("warningEmail");
 const warningRRSS = document.getElementById("warningRRSS");
 const warningHabilidades = document.getElementById("warningHabilidades");
 
+let tarjeta = false;
 let boolNombre = false;
 let boolProfesion = false;
 let boolTelefono = false;
@@ -107,37 +108,61 @@ form.addEventListener("submit", e => {
     }
 
     if (boolNombre == true && boolProfesion == true && boolTelefono == true && boolEmail == true && boolRRSS == true && boolHabilidades == true) {
-            const tarjetaNombre = document.createElement('p');
-            tarjetaNombre.textContent = nombre.value;
-            const tarjetaProfesion = document.createElement('p');
-            tarjetaProfesion.textContent = profesion.value;
-            const tarjetaTelefono = document.createElement('p');
-            tarjetaTelefono.textContent = telefono.value;
-            const tarjetaEmail = document.createElement('p');
-            tarjetaEmail.textContent = email.value;
-            const tarjetaRRSS = document.createElement('p');
-            tarjetaRRSS.textContent = rrss.value;
+            
+            
             const tarjetaHabilidades = document.createElement('p');
             tarjetaHabilidades.textContent = nombre.value;
 
-            const seleccionados = document.querySelectorAll('.checkboxLimited:checked');
-            const lista = document.createElement('ul');
+            const card = document.createElement('div');
+            card.className = 'card';
+            contenedorTarjeta.appendChild(card);
 
-            seleccionados.forEach(function(seleccionado) {
-                var listItem = document.createElement('li');
-                listItem.textContent = seleccionado.name;
-                lista.appendChild(listItem);
-            });
+                const card_image = document.createElement('div');
+                card_image.className = 'card_image';
+                card.appendChild(card_image);
 
-            contenedorTarjeta.appendChild(tarjetaNombre);
-            contenedorTarjeta.appendChild(tarjetaProfesion);
-            contenedorTarjeta.appendChild(tarjetaTelefono);
-            contenedorTarjeta.appendChild(tarjetaEmail);
-            contenedorTarjeta.appendChild(tarjetaRRSS);
-            contenedorTarjeta.appendChild(lista);
-            
-            
+                    const picture = document.createElement('img');
+                    picture.className = 'picture';
+                    picture.src = 'src/usuario.jpg';
+                    card_image.appendChild(picture);
 
+                const card_body = document.createElement('div');
+                card_body.className = 'card_body';
+                card.appendChild(card_body); 
+
+                    const tarjetaNombre = document.createElement('h2');
+                    tarjetaNombre.textContent = nombre.value;
+                    card_body.appendChild(tarjetaNombre);
+                    
+                    const tarjetaProfesion = document.createElement('p');
+                    tarjetaProfesion.textContent = profesion.value;
+                    card_body.appendChild(tarjetaProfesion);
+
+                    const tarjetaTelefono = document.createElement('p');
+                    tarjetaTelefono.textContent = telefono.value;
+                    card_body.appendChild(tarjetaTelefono);
+
+                    const tarjetaEmail = document.createElement('p');
+                    tarjetaEmail.textContent = email.value;
+                    card_body.appendChild(tarjetaEmail);
+
+                    const tarjetaRRSS = document.createElement('p');
+                    tarjetaRRSS.textContent = rrss.value;
+                    card_body.appendChild(tarjetaRRSS);
+
+                const card_redes = document.createElement('div');
+                card_redes.className = 'card_redes';
+                card.appendChild(card_redes);
+                
+                    const seleccionados = document.querySelectorAll('.checkboxLimited:checked');
+                    seleccionados.forEach(function(seleccionado) {
+                        var contenedor = document.createElement('div');
+                        var listItem = document.createElement('p');
+                        listItem.textContent = seleccionado.name;
+                        contenedor.appendChild(listItem);
+                        card_redes.appendChild(contenedor);
+                    });
+        tarjeta = true;
     }
 });
 
@@ -217,5 +242,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 });
-
-

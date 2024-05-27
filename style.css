@@ -29,7 +29,25 @@ header {
   font-size: 2em;
   color: #f1f7db;
   pointer-events: none;
-  margin-right: 270px;
+  margin-right: 190px;
+  
+}
+
+.logo .nombreSitio {
+  display: block;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.logo .creadores {
+  display: block;
+  font-weight: 300;
+  font-size: 0.4em;
+  color: #fff;
+}
+
+.navigation {
+  justify-self: center;
 }
 
 .navigation a {
@@ -79,7 +97,7 @@ header {
 
 .sec h2 {
   font-size: 3em;
-  color: #fff;
+  color: #1e192f;
   margin-bottom: 10px;
 }
 
@@ -497,4 +515,17 @@ p.warning {
 .contenedorimgform {
   display: flex;
   justify-content: space-between;
+}
+
+.pie_pagina {
+  background-color: #1e192f;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.pie_pagina p {
+  margin: 0;
 }

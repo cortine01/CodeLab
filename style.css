@@ -345,8 +345,8 @@ p.warning {
   align-items: center;            
   width: 450px;
   margin: 0 auto;
-  background:linear-gradient(rgb(245 215 189) 30%, rgb(255, 255, 255) 30%);
-  box-shadow: 0 0 25px darkred ;
+  background:linear-gradient(#65b9a5 30%, #f1f7db 30%);
+  box-shadow: 0 0 25px #1e192f ;
   border-radius: 10px;
   padding: 50px 16px;
 }
@@ -360,7 +360,7 @@ p.warning {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid rgb(250, 238, 227);
+  border: 4px solid #b6e8c3;
   box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
@@ -370,12 +370,12 @@ p.warning {
 
 .card:hover > .card_image > .picture{
   border-radius: 5%;
-  box-shadow: 0 0px 40px brown;
+  box-shadow: 0 0px 40px #b6e8c3;
   transform: translateY(-50%) scale(1.5);
 }
 
 .card_body{ text-align: center; padding: 20px; }
-.card_body h2{ color: peru; margin-bottom: 5px;}
+.card_body h2{ color:#2d6073; margin-bottom: 5px;}
 .card_body p{color: gray; margin-top: 5px;}
 .card_redes{
   width: 100%;
@@ -385,14 +385,14 @@ p.warning {
 .card_redes div{
   padding: 15px;
   text-align: center;
-  background:papayawhip;
+  background:#b6e8c3;
   border-radius: 6px;
   width: 100%;
   margin: 10px;
 }
 .card_redes div p{
   text-decoration: underline;
-  color: peru;
+  color: #2d6073;
 
 }
 
@@ -484,6 +484,17 @@ p.warning {
 }
 
 .contenedorj {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imagenform {
+  display: flex;
+  height: 700px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .31);
+  margin-top: 40px;
+}
+.contenedorimgform {
   display: flex;
   justify-content: space-between;
 }

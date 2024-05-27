@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
@@ -9,16 +10,17 @@
     <script src="https://kit.fontawesome.com/badd522a95.js" crossorigin="anonymous"></script>
     <title>CodeLab</title>
 </head>
+
 <body>
-<header> 
-    <h2 class="logo">CodeLab</h2>
-    <nav class="navigation">
-        <a href="#" class="active">Home</a>
-        <a href="#">About</a>
-        <a href="#">Service</a>
-        <a href="#">Contact</a>
-    </nav>
-</header> 
+    <header>
+        <h2 class="logo">CodeLab</h2>
+        <nav class="navigation">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Service</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
     <section class="parallax">
         <img src="src/3.png" id="fondo">
@@ -31,71 +33,114 @@
     </section>
 
     <section class="sec">
-        <h2>TRABAJA CON NOSOTROS</h2>
-        <div class="testbox">
 
-            <form id="form">
-                <div class="textContainer">
-                    <div class="inputGroup">
-                        <label id="icon" for="nombre"><i class="fa-regular fa-user" ></i></i></label>
-                        <input type="text" id="nombre" placeholder="Nombre Completo">
-                    </div>
-                    <p class="warning" id="warningNombre"></p>
-
-                    <div class="inputGroup">
-                        <label id="icon" for="profesion" ><i class="fa-solid fa-briefcase"></i></label>
-                        <input type="text" id="profesion" placeholder="Profesión">
-                    </div>
-                    <p class="warning" id="warningProfesion"></p>
-
-                    <div class="inputGroup">
-                        <label id="icon" for="telefono" ><i class="fa-solid fa-phone"></i></label>
-                        <input type="tel" id="telefono" placeholder="Teléfono">
-                    </div>
-                    <p class="warning" id="warningTelefono"></p>
-
-                    <div class="inputGroup">
-                        <label id="icon" for="email" ><i class="fa-regular fa-envelope"></i></label>
-                        <input type="email" id="email" placeholder="Email">
-                    </div>
-                    <p class="warning" id="warningEmail"></p>
-
-                    <div class="inputGroup">
-                        <label id="icon" for="rss"><i class="fa-brands fa-linkedin"></i></label>
-                        <input type="text" id="rrss" placeholder="linkedin">
-                    </div>
-                    <p class="warning" id="warningRRSS"></p>
+        <div class="contenedorj">
+            <section class="card">
+                <div class="card_landing" style="--i:url(src/people.jpg)">
+                    <h6>Misión</h6>
                 </div>
-                
-                <div class="accounttype">
-                    <div id="habilidadContenedor">
+                <div class="card_info">
+                    <p class="title">Misión</p>
+                    <p>CodeLab se dedica a proporcionar soluciones de software innovadoras y personalizadas que impulsen
+                        la transformación digital de nuestros clientes. Nuestro compromiso es ofrecer productos y
+                        servicios de alta calidad que mejoren la eficiencia, la productividad y la satisfacción del
+                        usuario final, contribuyendo al éxito y crecimiento sostenible de las empresas.</p>
+                </div>
+            </section>
+                <section class="card">
+                    <div class="card_landing" style="--i:url(src/vision.jpg)">
+                        <h6>Visión</h6>
+                    </div>
+                    <div class="card_info2" id="r">
+                        <p class="title">Visión</p>
+                        <p>Ser reconocidos como líderes en el desarrollo de software a nivel global, destacándonos por
+                            nuestra creatividad, innovación y excelencia técnica. Aspiramos a transformar la industria
+                            tecnológica mediante la implementación de soluciones vanguardistas que anticipen y superen
+                            las expectativas de nuestros clientes, contribuyendo a un futuro más conectado y digital.
+                        </p>
+                    </div>
+                </section>
+        </div>
+    </section>
+
+    <section class="sec">
+
+        <section>
+
+            <h2>TRABAJA CON NOSOTROS</h2>
+            <div class="testbox">
+
+                <form id="form">
+                    <div class="textContainer">
+                        <div class="inputGroup">
+                            <label id="icon" for="nombre"><i class="fa-regular fa-user"></i></i></label>
+                            <input type="text" id="nombre" placeholder="Nombre Completo">
+                        </div>
+                        <p class="warning" id="warningNombre"></p>
+
+                        <div class="inputGroup">
+                            <label id="icon" for="profesion"><i class="fa-solid fa-briefcase"></i></label>
+                            <input type="text" id="profesion" placeholder="Profesión">
+                        </div>
+                        <p class="warning" id="warningProfesion"></p>
+
+                        <div class="inputGroup">
+                            <label id="icon" for="telefono"><i class="fa-solid fa-phone"></i></label>
+                            <input type="tel" id="telefono" placeholder="Teléfono">
+                        </div>
+                        <p class="warning" id="warningTelefono"></p>
+
+                        <div class="inputGroup">
+                            <label id="icon" for="email"><i class="fa-regular fa-envelope"></i></label>
+                            <input type="email" id="email" placeholder="Email">
+                        </div>
+                        <p class="warning" id="warningEmail"></p>
+
+                        <div class="inputGroup">
+                            <label id="icon" for="rss"><i class="fa-brands fa-linkedin"></i></label>
+                            <input type="text" id="rrss" placeholder="linkedin">
+                        </div>
+                        <p class="warning" id="warningRRSS"></p>
+                    </div>
+
+                    <div class="accounttype">
+                        <div id="habilidadContenedor">
                             <legend>Habilidades</legend>
                             <p class="habilidadesDescripcion">Solo puede elegir un maximo de 3 Habilidades:</p>
-                            <label class="check" for="checkboxLimited">HTML<input type="checkbox" name="HTML" class="checkboxLimited"></label>
-                            <label class="check" for="checkboxLimited">CSS<input type="checkbox" name="CSS" class="checkboxLimited"></label>
-                            <label class="check" for="checkboxLimited">git<input type="checkbox" name="git" class="checkboxLimited"></label>
-                            <label class="check" for="checkboxLimited">JavaScript<input type="checkbox" name="JavaScript" class="checkboxLimited"></label>
-                            <label class="check" for="checkboxLimited">AJAX<input type="checkbox" name="AJAX" class="checkboxLimited"></label>
-                            <label class="check" for="checkboxLimited">React<input type="checkbox" name="React" class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">HTML<input type="checkbox" name="HTML"
+                                    class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">CSS<input type="checkbox" name="CSS"
+                                    class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">git<input type="checkbox" name="git"
+                                    class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">JavaScript<input type="checkbox"
+                                    name="JavaScript" class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">AJAX<input type="checkbox" name="AJAX"
+                                    class="checkboxLimited"></label>
+                            <label class="check" for="checkboxLimited">React<input type="checkbox" name="React"
+                                    class="checkboxLimited"></label>
+                        </div>
+                        <div id="warning-container">
+                            <p class="warning" id="warningHabilidades"></p>
+
+                        </div>
+                        <div class="habilidades-container">
+                            <input type="button" value="Añadir Habilidad" id="btnAddHabilidad" class="btnHabilidad">
+                            <input type="button" value="Eliminar Habilidad" id="btnDeleteHabilidad"
+                                class="btnHabilidad">
+                        </div>
                     </div>
-                    <div id="warning-container">
-                        <p class="warning" id="warningHabilidades"></p>
-                        
+                    <div class="submit-container">
+                        <button type="submit" class="btnSubmit">Enviar</button>
                     </div>
-                    <div class="habilidades-container">
-                        <input type="button" value="Añadir Habilidad" id="btnAddHabilidad" class="btnHabilidad">
-                        <input type="button" value="Eliminar Habilidad" id="btnDeleteHabilidad" class="btnHabilidad">
-                    </div>
-                </div>
-                <div class="submit-container">
-                    <button type="submit" class="btnSubmit">Enviar</button>
-                </div>
-            </form>
-        </div>
-            <div id="contenedorTarjeta">
-                
+                </form>
             </div>
-    </section>
-    <script src="function.js"></script>
+            <div id="contenedorTarjeta">
+
+            </div>
+
+        </section>
+        <script src="function.js"></script>
 </body>
+
 </html>

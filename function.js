@@ -241,4 +241,74 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         });
     });
+
+    ajax();
 });
+
+
+function ajax() {
+    const http = new XMLHttpRequest();
+    const url = 'desarrollo.txt';
+
+    http.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            const desarrollo = document.getElementById("desarrollo");
+            const content = this.responseText;
+            const lines = content.split('\n');
+
+            let contenedor = null;
+            let contenido = null;
+            
+            lines.forEach(line => {
+                if (line.trim().length === 0) {
+                    // Quita lineas vacias
+                    return;
+                }
+                if (line.includes('src')) {
+                    // Es un imagen
+
+                    if (contenedor) {
+                        if (contenido) {
+                            contenedor.appendChild(contenido);
+                        }
+                        desarrollo.appendChild(contenedor);
+                    }
+                    
+                    contenedor = document.createElement('div');
+                    contenedor.className = "cardDesarrollo";
+                    
+                    contenido = document.createElement('div');
+                    contenido.className = "contenido";
+                    
+                    let currentImg = document.createElement('img');
+                    currentImg.src = line.trim();
+                    contenedor.appendChild(currentImg);
+                } else if(line.includes(':')) {
+                    // Es un titulo
+                    let currentTitle = document.createElement('h2');
+                    currentTitle.textContent = line.trim();
+                    contenido.appendChild(currentTitle);
+                } else {
+                    // Es un parrafo
+                    const paragraph = document.createElement('p');
+                    paragraph.textContent = line.trim();
+                    contenido.appendChild(paragraph);
+                }
+            });
+
+            if (contenido) {
+                contenedor.appendChild(contenido);
+            }
+
+            if (contenedor) {
+                desarrollo.appendChild(contenedor);
+            }
+        }
+    }
+
+    http.open("GET", url, true);
+    http.send();
+}
+
+
+

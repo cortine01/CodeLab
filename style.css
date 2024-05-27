@@ -89,6 +89,52 @@ header {
   font-weight: 300;
 }
 
+#desarrollo {
+  width: 400px;
+  height: 1500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-content: center;
+  margin: 0 auto;
+}
+
+.cardDesarrollo {
+  width: 100%;
+  margin: 20px;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  transition: all 400ms ease;
+}
+.cardDesarrollo:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3%);
+}
+
+.cardDesarrollo img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.cardDesarrollo .contenido {
+  padding: 15px;
+  text-align: center;
+}
+
+.cardDesarrollo .contenido p {
+  line-height: 1.5;
+  color: #6a6a6a;
+}
+
+.cardDesarrollo .contenido h2 {
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: black;
+}
+
 input[type=text],
 input[type=tel],
 input[type=email] {

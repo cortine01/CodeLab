@@ -89,6 +89,52 @@ header {
   font-weight: 300;
 }
 
+#desarrollo {
+  width: 400px;
+  height: 1500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-content: center;
+  margin: 0 auto;
+}
+
+.cardDesarrollo {
+  width: 100%;
+  margin: 20px;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  transition: all 400ms ease;
+}
+.cardDesarrollo:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3%);
+}
+
+.cardDesarrollo img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.cardDesarrollo .contenido {
+  padding: 15px;
+  text-align: center;
+}
+
+.cardDesarrollo .contenido p {
+  line-height: 1.5;
+  color: #6a6a6a;
+}
+
+.cardDesarrollo .contenido h2 {
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: black;
+}
+
 input[type=text],
 input[type=tel],
 input[type=email] {
@@ -288,13 +334,85 @@ p.warning {
   background-color: #2d6073; /* Color de fondo al pasar el ratón por encima */
 }
 
-.card {
+
+#contenedorTarjeta {
+  margin-top: 100px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;            
+  width: 450px;
+  margin: 0 auto;
+  background:linear-gradient(rgb(245 215 189) 30%, rgb(255, 255, 255) 30%);
+  box-shadow: 0 0 25px darkred ;
+  border-radius: 10px;
+  padding: 50px 16px;
+}
+.card_image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+}
+.card_image .picture{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgb(250, 238, 227);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.card > .card_image > .picture{    
+  transition: all 0.7s;
+}
+
+.card:hover > .card_image > .picture{
+  border-radius: 5%;
+  box-shadow: 0 0px 40px brown;
+  transform: translateY(-50%) scale(1.5);
+}
+
+.card_body{ text-align: center; padding: 20px; }
+.card_body h2{ color: peru; margin-bottom: 5px;}
+.card_body p{color: gray; margin-top: 5px;}
+.card_redes{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.card_redes div{
+  padding: 15px;
+  text-align: center;
+  background:papayawhip;
+  border-radius: 6px;
+  width: 100%;
+  margin: 10px;
+}
+.card_redes div p{
+  text-decoration: underline;
+  color: peru;
+
+}
+
+/* ANIMACIONES CSS */
+@keyframes _in {
+  0%{ border-radius: 50%}            
+  100%{ border-radius: 0%; transform: scale(1.2);}
+}
+
+@keyframes _out {
+  0%{ border-radius: 0%;transform: scale(1.2);}
+  100%{ border-radius: 50%; transform: scale(1);}                        
+}
+.card1 {
   position: relative;
   width: 300px;
   height: 400px;
 }
 
-.card .card_landing {
+.card1 .card_landing {
   position: relative;
   width: 100%;
   height: 100%;
@@ -305,7 +423,7 @@ p.warning {
   z-index: 100;
 }
 
-.card .card_landing h6 {
+.card1 .card_landing h6 {
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -313,7 +431,7 @@ p.warning {
   color: #fff;
 }
 
-.card .card_info {
+.card1 .card_info {
   position: absolute;
   width: 90%;
   height: 90%;
@@ -328,7 +446,7 @@ p.warning {
   transition: .5s;
 }
 
-.card .card_info2 {
+.card1 .card_info2 {
   position: absolute;
   width: 90%;
   height: 90%;
@@ -343,11 +461,11 @@ p.warning {
   transition: .5s;
 }
 
-.card:hover .card_info {
+.card1:hover .card_info {
   left: 100%;
 }
 
-.card:hover .card_info2 {
+.card1:hover .card_info2 {
   left: -190%;
 }
 

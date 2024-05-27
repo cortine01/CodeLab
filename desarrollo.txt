@@ -1,0 +1,35 @@
+src\desarrollosoftware.png
+Desarrollo de Software a Medida:
+Soluciones empresariales personalizadas que se ajusten a las necesidades específicas de cada cliente.
+Desarrollo de sistemas de gestión empresarial (ERP), CRM y otros softwares administrativos.
+Integración de software con hardware y otros sistemas existentes.
+
+src/desarrolloweb.png
+Desarrollo Web:
+Diseño y desarrollo de sitios web responsivos y aplicaciones web progresivas.
+E-commerce y plataformas de venta online.
+Optimización SEO y experiencia de usuario (UX).
+
+src\InteligenciaArtificial.png
+Inteligencia Artificial y Machine Learning:
+Implementación de algoritmos de IA para mejorar la toma de decisiones empresariales.
+Desarrollo de chatbots y asistentes virtuales.
+Análisis predictivo y procesamiento de datos masivos (Big Data).
+
+src\ciberseguridad.png
+Ciberseguridad:
+Auditorías de seguridad y pruebas de penetración.
+Desarrollo de soluciones de seguridad informática para proteger datos y sistemas.
+Consultoría en políticas y estrategias de ciberseguridad.
+
+src\internetCosas.png
+Internet de las Cosas (IoT):
+Desarrollo de soluciones IoT para la interconexión de dispositivos.
+Implementación de sistemas de automatización y monitoreo remoto.
+Integración de IoT en sectores como la salud, la agricultura y la industria.
+
+src\realidadVirtual.png
+Realidad Virtual y Aumentada:
+Desarrollo de aplicaciones y experiencias inmersivas en VR y AR.
+Soluciones para educación, entretenimiento, y formación profesional.
+Integración de VR y AR en procesos industriales y comerciales.

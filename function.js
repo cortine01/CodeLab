@@ -150,9 +150,9 @@ form.addEventListener("submit", e => {
                     tarjetaRRSS.textContent = rrss.value;
                     card_body.appendChild(tarjetaRRSS);
 
-                const card_redes = document.createElement('div');
-                card_redes.className = 'card_redes';
-                card.appendChild(card_redes);
+                    const card_redes = document.createElement('div');
+                    card_redes.className = 'card_redes';
+                    card.appendChild(card_redes);
                 
                     const seleccionados = document.querySelectorAll('.checkboxLimited:checked');
                     seleccionados.forEach(function(seleccionado) {
@@ -224,6 +224,9 @@ btnDeleteHabilidad.addEventListener('click', deleteLastHabilidad);
 
 //Validar limite Tres checkboxes
 document.addEventListener('DOMContentLoaded', (event) => {
+    ajax();
+    scrollNav();
+
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function () {
             const checkedCheckboxes = document.querySelectorAll('.checkboxLimited:checked');
@@ -242,9 +245,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 
-    ajax();
 });
 
+function scrollNav() {
+    const enlaces = document.querySelectorAll(".navigation a");
+
+    enlaces.forEach( enlace => {
+        enlace.addEventListener("click", function(e) {
+            e.preventDefault();
+            const seccionScroll = e.target.attributes.href.value;
+            const seccion = document.querySelector(seccionScroll);
+            seccion.scrollIntoView({behavior: "smooth"});
+        });
+    });
+}
 
 function ajax() {
     const http = new XMLHttpRequest();
@@ -309,6 +323,3 @@ function ajax() {
     http.open("GET", url, true);
     http.send();
 }
-
-
-

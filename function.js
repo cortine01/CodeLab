@@ -8,7 +8,7 @@ let fondo = document.getElementById('fondo');
 
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
-    if (value > 633) {
+    if (value > 600) {
         return;
     }
 
@@ -59,35 +59,47 @@ const form = document.getElementById("form");
 form.addEventListener("submit", e => {
     e.preventDefault();
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    //Validar Nombre
+    let num = /^\d+$/;
+    // Validar Nombre
     if (nombre.value.length < 6) {
-        warningNombre.innerHTML = "el Nombre es muy corto";
+        warningNombre.innerHTML = "El Nombre es muy corto";
+        boolNombre = false;
+    } else if (num.test(nombre.value)) {
+        warningNombre.innerHTML = "El Nombre solo puede contener numeros";
         boolNombre = false;
     } else {
         warningNombre.innerHTML = "";
         boolNombre = true;
     }
 
-    //Validar Profesión
+    // Validar Profesión
     if (profesion.value.length < 6) {
-        warningProfesion.innerHTML = "La profesión es muy corto";
+        warningProfesion.innerHTML = "La profesión es muy corta";
         boolProfesion = false;
+    } else if (num.test(profesion.value)) {
+        warningProfesion.innerHTML = "La Profesión solo puede contener numeros";
+        boolProfesion = false; 
     } else {
         warningProfesion.innerHTML = "";
         boolProfesion = true;
     }
 
+
     //Validar Telefono
     if (telefono.value.length < 10) {
-        warningTelefono.innerHTML = "el telefono es muy corto";
+        warningTelefono.innerHTML = "El teléfono es muy corto";
         boolTelefono = false;
     } else if (telefono.value.length > 10) {
-        warningTelefono.innerHTML = "el telefono es muy largo";
+        warningTelefono.innerHTML = "El teléfono es muy largo";
+        boolTelefono = false;
+    } else if (!/^\d{10}$/.test(telefono.value)) {
+        warningTelefono.innerHTML = "El teléfono debe contener solo números";
         boolTelefono = false;
     } else {
         warningTelefono.innerHTML = "";
         boolTelefono = true;
     }
+    
 
     //Validar Email
     if (!regexEmail.test(email.value)) {

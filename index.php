@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="import" href="https://fontawesome.com/icons/envelope?f=classic&s=fa-regular">
     <script src="https://kit.fontawesome.com/badd522a95.js" crossorigin="anonymous"></script>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>CodeLab</title>
 </head>
 
@@ -88,35 +91,35 @@
 
             <div class="testbox">
 
-                <form id="form">
+                <form method="post" id="form" autocomple="off">
                     <div class="textContainer">
                         <div class="inputGroup">
                             <label id="icon" for="nombre"><i class="fa-regular fa-user"></i></i></label>
-                            <input type="text" id="nombre" placeholder="Nombre Completo">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo">
                         </div>
                         <p class="warning" id="warningNombre"></p>
 
                         <div class="inputGroup">
                             <label id="icon" for="profesion"><i class="fa-solid fa-briefcase"></i></label>
-                            <input type="text" id="profesion" placeholder="Profesión">
+                            <input type="text" id="profesion" name="profesion" placeholder="Profesión">
                         </div>
                         <p class="warning" id="warningProfesion"></p>
 
                         <div class="inputGroup">
                             <label id="icon" for="telefono"><i class="fa-solid fa-phone"></i></label>
-                            <input type="tel" id="telefono" placeholder="Teléfono">
+                            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
                         </div>
                         <p class="warning" id="warningTelefono"></p>
 
                         <div class="inputGroup">
                             <label id="icon" for="email"><i class="fa-regular fa-envelope"></i></label>
-                            <input type="email" id="email" placeholder="Email">
+                            <input type="email" id="email" name="email" placeholder="Email">
                         </div>
                         <p class="warning" id="warningEmail"></p>
 
                         <div class="inputGroup">
                             <label id="icon" for="rss"><i class="fa-brands fa-linkedin"></i></label>
-                            <input type="text" id="rrss" placeholder="linkedin">
+                            <input type="text" id="rrss" name="rrss" placeholder="linkedin">
                         </div>
                         <p class="warning" id="warningRRSS"></p>
                     </div>
@@ -149,11 +152,20 @@
                         </div>
                     </div>
                     <div class="submit-container">
-                        <button type="submit" class="btnSubmit">Enviar</button>
+                        <!--<button type="submit" class="btnSubmit" name = "send">Enviar</button>-->
+                        <input type="submit" class="btnSubmit" value="Enviar">
                     </div>
                 </form>
             </div>
 
+        </div>
+        <div>
+            <form id="form2">
+                <select name="postulado" id="postulado">
+                    <?php include 'postulados.php'; ?>
+                </select>
+                <input type="submit" class="btnSubmit" value="Monstrar">
+            </form>
         </div>
         <div id="contenedorTarjeta">
 
@@ -161,12 +173,9 @@
 
     </section>
 
-
-
     <footer class="pie_pagina">
         <p>&copy; 2024 <b>CodeLab</b> - Todos los Derechos</p>
     </footer>
-
     <script src="function.js"></script>
 </body>
 

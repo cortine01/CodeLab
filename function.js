@@ -48,12 +48,14 @@ let boolHabilidades = true;
 const btnAddHabilidad = document.getElementById("btnAddHabilidad");
 const habilidadContenedor = document.getElementById("habilidadContenedor");
 const warningContainer = document.getElementById("warning-container");
+const successSubmit = document.getElementById("successSubmit");
 const btnDeleteHabilidad = document.getElementById("btnDeleteHabilidad");
 const contenedorTarjeta = document.getElementById("contenedorTarjeta");
 
 const checkboxes = document.querySelectorAll('.checkboxLimited');
 
 const form = document.getElementById("form");
+const form2 = document.getElementById("form2");
 
 //Validar formulario
 form.addEventListener("submit", e => {
@@ -121,61 +123,135 @@ form.addEventListener("submit", e => {
 
     if (boolNombre == true && boolProfesion == true && boolTelefono == true && boolEmail == true && boolRRSS == true && boolHabilidades == true) {
             
+        checkboxes.forEach(checkbox => {
+            const checkedCheckboxes = document.querySelectorAll('.checkboxLimited:checked');
+            habilidadesSeleccionadas = Array.from(checkedCheckboxes).map(cb => cb.name).join(' ');
+        });
+
+        console.log(telefono.value);
+
+        var params ={
+            "nombre": nombre.value,
+            "profesion": profesion.value,
+            "telefono": telefono.value,
+            "email": email.value,
+            "rrss": rrss.value,
+            "habilidades": habilidadesSeleccionadas
+          }
+
+          console.log(params);
+  
+          $.ajax({
+            data: params,
+            url: "send.php",
+            type: "POST",
+  
+            beforesend: function(){
+  
+            },
+            success: function(mensaje){
+              console.log("Works " + mensaje);
+            },
+            error: function(jqXHR, status, error){
+              console.log("Fail " + error.message);
+            }});
             
-            const tarjetaHabilidades = document.createElement('p');
-            tarjetaHabilidades.textContent = nombre.value;
-
-            const card = document.createElement('div');
-            card.className = 'card';
-            contenedorTarjeta.appendChild(card);
-
-                const card_image = document.createElement('div');
-                card_image.className = 'card_image';
-                card.appendChild(card_image);
-
-                    const picture = document.createElement('img');
-                    picture.className = 'picture';
-                    picture.src = 'src/usuario.jpg';
-                    card_image.appendChild(picture);
-
-                const card_body = document.createElement('div');
-                card_body.className = 'card_body';
-                card.appendChild(card_body); 
-
-                    const tarjetaNombre = document.createElement('h2');
-                    tarjetaNombre.textContent = nombre.value;
-                    card_body.appendChild(tarjetaNombre);
-                    
-                    const tarjetaProfesion = document.createElement('p');
-                    tarjetaProfesion.textContent = profesion.value;
-                    card_body.appendChild(tarjetaProfesion);
-
-                    const tarjetaTelefono = document.createElement('p');
-                    tarjetaTelefono.textContent = telefono.value;
-                    card_body.appendChild(tarjetaTelefono);
-
-                    const tarjetaEmail = document.createElement('p');
-                    tarjetaEmail.textContent = email.value;
-                    card_body.appendChild(tarjetaEmail);
-
-                    const tarjetaRRSS = document.createElement('p');
-                    tarjetaRRSS.textContent = rrss.value;
-                    card_body.appendChild(tarjetaRRSS);
-
-                    const card_redes = document.createElement('div');
-                    card_redes.className = 'card_redes';
-                    card.appendChild(card_redes);
-                
-                    const seleccionados = document.querySelectorAll('.checkboxLimited:checked');
-                    seleccionados.forEach(function(seleccionado) {
-                        var contenedor = document.createElement('div');
-                        var listItem = document.createElement('p');
-                        listItem.textContent = seleccionado.name;
-                        contenedor.appendChild(listItem);
-                        card_redes.appendChild(contenedor);
-                    });
+           
         tarjeta = true;
+        alert("Se envio Correctamente");
+        form.reset();
     }
+});
+
+
+
+form2.addEventListener("submit", e => {
+    e.preventDefault();
+
+    if (contenedorTarjeta.hasChildNodes()) {
+        contenedorTarjeta.removeChild(contenedorTarjeta.firstChild);
+    }
+    
+    var selectElement = document.getElementById("postulado");
+    var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+
+    var params ={
+        "postulado": selectedOption
+      }
+
+      $.ajax({
+        data: params,
+        url: "carta.php",
+        type: "GET",
+        dataType: "json",
+        success: function(data){
+            if (data.error) {
+                console.log("Error: " + data.error);
+            } else {
+                console.log(data);
+                // Procesa los datos recibidos aquí
+                data.forEach(function(item) {
+                    const tarjetaHabilidades = document.createElement('p');
+                    tarjetaHabilidades.textContent = item.nombre;
+        
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    contenedorTarjeta.appendChild(card);
+        
+                        const card_image = document.createElement('div');
+                        card_image.className = 'card_image';
+                        card.appendChild(card_image);
+        
+                            const picture = document.createElement('img');
+                            picture.className = 'picture';
+                            picture.src = 'src/usuario.jpg';
+                            card_image.appendChild(picture);
+        
+                        const card_body = document.createElement('div');
+                        card_body.className = 'card_body';
+                        card.appendChild(card_body); 
+        
+                            const tarjetaNombre = document.createElement('h2');
+                            tarjetaNombre.textContent = item.nombre;
+                            card_body.appendChild(tarjetaNombre);
+                            
+                            const tarjetaProfesion = document.createElement('p');
+                            tarjetaProfesion.textContent = item.profesion;
+                            card_body.appendChild(tarjetaProfesion);
+        
+                            const tarjetaTelefono = document.createElement('p');
+                            tarjetaTelefono.textContent = item.telefono;
+                            card_body.appendChild(tarjetaTelefono);
+        
+                            const tarjetaEmail = document.createElement('p');
+                            tarjetaEmail.textContent = item.email;
+                            card_body.appendChild(tarjetaEmail);
+        
+                            const tarjetaRRSS = document.createElement('p');
+                            tarjetaRRSS.textContent = item.linkedin;
+                            card_body.appendChild(tarjetaRRSS);
+        
+                            const card_redes = document.createElement('div');
+                            card_redes.className = 'card_redes';
+                            card.appendChild(card_redes);
+                        
+                            let arrayPalabras = item.habilidades.split(' ');
+                            console.log(arrayPalabras);
+                            const seleccionados = arrayPalabras;
+                            seleccionados.forEach(function(seleccionado) {
+                                var contenedor = document.createElement('div');
+                                var listItem = document.createElement('p');
+                                listItem.textContent = seleccionado;
+                                contenedor.appendChild(listItem);
+                                card_redes.appendChild(contenedor);
+                            });
+                });
+            }
+        },
+        error: function(jqXHR, status, error){
+            console.log("Error: " + error);
+        }});
+            
 });
 
 //Añadir Habilidad

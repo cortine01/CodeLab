@@ -1,4 +1,4 @@
 <?php
-$conex = mysqli_connect("localhost", "root", "", "codelab");
+$conex = mysqli_connect("localhost", "root", "root", "codelab");
 
 ?>

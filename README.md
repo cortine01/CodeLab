@@ -1,7 +1,7 @@
 # 📌 Proyecto en PHP con MySQL
 
 ## 📖 Resumen del Proyecto
-Este proyecto es una aplicación desarrollada en **PHP** que tiene un diseño con animaciones dinámicas y varios efectos también lee la información de un texto para sacar información de areas de desarrollo ademas permite a los usuarios añadir información a una base de datos y luego visualizarla en una tarjeta .  
+Este proyecto es una aplicación desarrollada en **PHP** que tiene un diseño con animaciones dinámicas y varios efectos también lee la información de un texto para sacar información de areas de desarrollo ademas permite a los usuarios añadir información a una base de datos y luego visualizarla en una tarjeta.  
 Utiliza una base de datos **MySQL** para almacenar la información y proporciona una interfaz sencilla para interactuar con los datos.
 
 ---
